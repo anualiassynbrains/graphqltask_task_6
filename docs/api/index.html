@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ML Model Registry - GraphQL API Docs</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2rem; background: #f9f9f9; }
+    h1 { color: #2c3e50; }
+    code { background: #eee; padding: 4px 8px; border-radius: 5px; display: block; margin-bottom: 1rem; }
+    section { margin-bottom: 2rem; }
+  </style>
+</head>
+<body>
+  <h1>ML Model Registry GraphQL API</h1>
+
+  <section>
+    <h2>📥 Mutation: Add a Model</h2>
+    <p>Add a new model to the registry</p>
+    <code>
+mutation {
+  addModel(modelInput: {
+    name: "new-model",
+    version: "1.0.0",
+    description: "Test model",
+    deploymentStatus: "TRAINING",
+    framework: "scikit-learn",
+    teamId: 401,
+    experimentId: 201,
+    metrics: [
+      { name: "accuracy", value: 0.85 }
+    ]
+  }) {
+    id
+    name
+    version
+    description
+    deploymentStatus
+    framework
+    team { name }
+    experiment { id startTime }
+    metrics { name value }
+  }
+}
+    </code>
+  </section>
+
+  <section>
+    <h2>🔍 Query: Get All Models</h2>
+    <code>
+query {
+  models {
+    id
+    name
+    version
+    description
+    framework
+    deploymentStatus
+    metrics { name value }
+    team { name }
+    experiment { id startTime }
+  }
+}
+    </code>
+  </section>
+
+  <section>
+    <h2>🔍 Query: Get Model by Name</h2>
+    <code>
+query {
+  model(name: "customer-churn-xgb") {
+    id
+    name
+    version
+    metrics { name value }
+    team { name }
+  }
+}
+    </code>
+  </section>
+
+  <section>
+    <h2>🚀 Try It</h2>
+    <p>Use this URL to open the <b>GraphQL Playground</b>:</p>
+    <code><a href="/graphql" target="_blank">/graphql</a></code>
+  </section>
+</body>
+</html>

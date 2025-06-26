@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "graphqlwork"
+version = "0.1.0"
+description = "ML Model Registry - FastAPI + Strawberry GraphQL"
+authors = ["anualiassynbrains <anu.alias@synbrains.ai>"]
+readme = "README.md"
+packages = [{include = "graphqlwork", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+fastapi = "^0.115.13"
+strawberry-graphql = "^0.275.2"
+uvicorn = "^0.34.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
