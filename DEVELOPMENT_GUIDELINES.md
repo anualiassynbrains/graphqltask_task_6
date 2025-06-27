@@ -22,7 +22,7 @@
     
     *   Use Git. Commit often with clear messages.
         
-    *   Ignore `.env/`, `__pycache__/`, and `.mypy_cache/`.
+    *   Ignore `.env/`, `__pycache__/.
         
     *   Track your `pyproject.toml` and `poetry.lock`.
 
@@ -36,5 +36,7 @@ Run the App
   
 
 Use Uvicorn to run the development server:
+ 
+```bash 
 
-uvicorn your\_project\_name.main:app --reload
+poetry run uvicorn src.graphqlwork.main:app --reload
