@@ -1,30 +1,35 @@
-ML Model Registry - FastAPI + Strawberry GraphQL
-================================================
+**ML Model Registry – FastAPI + Strawberry GraphQL**
+====================================================
 
-This is a simple in-memory GraphQL API built using FastAPI and Strawberry to manage a Machine Learning Model Registry. It supports querying and mutations for models, teams, and experiments.
+This is a simple in-memory GraphQL API built using FastAPI and Strawberry to manage a Machine Learning Model Registry. It supports querying and mutations for models, teams, metrics, and experiments.
 
-SETUP INSTRUCTIONS (USING POETRY):
+* * *
 
-1.  Install Poetry: https://python-poetry.org/docs/#installation
-    
-2.  Create a new project folder and navigate to it
-    
-3.  `mkdir ml-model-registry && cd ml-model-registry`
-    
-4.  Initialize Poetry project:  
-    `poetry init --no-interaction`
-    
-5.  Add dependencies:  
-    `poetry add fastapi uvicorn strawberry-graphql`
-    
-6.  Create a `main.py` file and paste the code.
-    
-7.  Start the server:  
-    `poetry run uvicorn main:app --reload`
-    
+SETUP INSTRUCTIONS (USING POETRY)
+---------------------------------
 
-GraphQL Playground URL:  
-[http://localhost:8000/graphql](http://localhost:8000/graphql)
+1.  **Install Poetry**  
+    Follow the instructions at:  
+    [https://python-poetry.org/docs/#installation](https://python-poetry.org/docs/#installation)
+    
+2.  Clone the repository  git clone https://github.com/anualiassynbrains/graphqltask\_task\_6
+    ```bash
+    cd your-repo-name
+    
+3.  Install project dependencies
+    ```bash
+    poetry add fastapi uvicorn strawberry-graphql
+    
+5.  Activate virtual environment
+    ```bash
+      poetry shell
+    
+7.  Run the FastAPI app
+     ```bash
+      poetry run uvicorn src.graphqlwork.main:app --reload
+    
+9.  **Access GraphQL Playground**  
+    Open in browser: [http://localhost:8000/graphql](http://localhost:8000/graphql)
 
 query {
   models {
